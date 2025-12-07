@@ -53,6 +53,7 @@ dependencies {
     modImplementation(libs.fabric.loader)
 
     modImplementation(libs.kotlin.fabric)
+    modApi(libs.cardinalComponents)
 
     modApi(libs.architectury.fabric) {
         // Fix for the "two fabric loaders" loading crash
@@ -67,7 +68,6 @@ dependencies {
     // we use modLocalRuntime to add these to the development runtime, but not at compile time or for consumers of this project
     modLocalRuntime(libs.paucal.fabric)
     modLocalRuntime(libs.patchouli.fabric)
-    modLocalRuntime(libs.cardinalComponents)
     modLocalRuntime(libs.serializationHooks)
     modLocalRuntime(libs.trinkets)
     modLocalRuntime(libs.inline.fabric) { isTransitive = false }

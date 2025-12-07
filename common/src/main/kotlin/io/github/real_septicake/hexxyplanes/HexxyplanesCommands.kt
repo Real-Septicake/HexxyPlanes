@@ -1,10 +1,7 @@
 package io.github.real_septicake.hexxyplanes
 
 import com.mojang.brigadier.CommandDispatcher
-import io.github.real_septicake.hexxyplanes.commands.CreatePlaneCommand
-import io.github.real_septicake.hexxyplanes.commands.EnterPlaneCommand
-import io.github.real_septicake.hexxyplanes.commands.ExitPlaneCommand
-import io.github.real_septicake.hexxyplanes.commands.GetChunkCommand
+import io.github.real_septicake.hexxyplanes.commands.*
 import net.minecraft.commands.CommandSourceStack
 import net.minecraft.commands.Commands
 
@@ -16,6 +13,8 @@ object HexxyplanesCommands {
         CreatePlaneCommand.add(source)
         EnterPlaneCommand.add(source)
         ExitPlaneCommand.add(source)
+        PlaneExitCommand.add(source)
+        GetPlaneExitCommand.add(source)
 
         dispatcher.register(source)
     }

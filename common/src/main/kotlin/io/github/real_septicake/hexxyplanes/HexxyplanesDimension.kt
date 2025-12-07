@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Blocks
 import java.util.*
 
 object HexxyplanesDimension {
+
     val WORLD_KEY = ResourceKey.create(
         Registries.DIMENSION,
         Hexxyplanes.id("demiplane")
@@ -50,6 +51,15 @@ object HexxyplanesDimension {
     }
 
     fun exitPlane(world: ServerLevel, player: ServerPlayer) {
+        val exit = getExit(player)
+        if(exit !== null) {
+            val dim = world.server.getLevel(exit.dimension)!!
+            val pos = exit.position
+            player.teleportTo(
+                dim, pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble(), 0f, 0f
+            )
+            return
+        }
         var dest = player.respawnPosition ?: world.sharedSpawnPos
         var dim = player.respawnDimension
         if(dim == WORLD_KEY) {
