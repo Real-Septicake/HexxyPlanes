@@ -3,6 +3,22 @@
     book: {
       patterns: {
         spells: {
+          demiplane: {
+            "": "Demiplanes",
+            get_plane: "Retrieves an iota representing my Demiplane.",
+            enter_plane: {
+              "1": "Sends me to the provided demiplane. Costs 10 charged amethyst \
+              if not already in a demiplane, costing 5 dust otherwise.",
+              "2": "Upon entering a plane, the two blocks on the spawn point are \
+              broken, as if by a player, and any fragile  blocks $(l)are not \
+              dropped./$ The spawn point is signified by a purple tinted version \
+              of the blocks that make up the walls."
+            },
+            exit_plane: "Removes me from the demiplane, placing me back at my spawn. \
+            This same effect can be accomplished by punching the walls that line the \
+            plane.",
+            plane_pos: "Gets the spawn position within this plane as a vector",
+          },
         },
       },
     },
@@ -17,8 +33,10 @@
   hexcasting: {
     action: {
       "hexxyplanes:": {
-        congratulate: "Congratulate Player",
-        "congratulate/great": "Great Congrats!",
+        get_plane: "Planar Reflection",
+        enter_plane: "Planar Intrusion",
+        exit_plane: "Planar Expulsion",
+        plane_pos: "Planar Purification"
       },
 
       // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
@@ -27,6 +45,7 @@
       },
     },
     mishap: {
+      not_in_demiplane: "Must be in a demiplane to cast this pattern.",
       invalid_value: {
         class: {
           plane: "a Demiplane"

@@ -9,12 +9,14 @@ import at.petrak.hexcasting.common.lib.hex.HexActions
 import io.github.real_septicake.hexxyplanes.casting.actions.OpGetPlane
 import io.github.real_septicake.hexxyplanes.casting.actions.spells.OpEnterPlane
 import io.github.real_septicake.hexxyplanes.casting.actions.spells.OpExitPlane
+import io.github.real_septicake.hexxyplanes.casting.actions.spells.OpPlanePosition
 
 object HexxyplanesActions : HexxyplanesRegistrar<ActionRegistryEntry>(
     HexRegistries.ACTION,
     { HexActions.REGISTRY },
 ) {
     val GET_PLANE = make("get_plane", HexDir.NORTH_EAST, "dwawd") { OpGetPlane }
+    val PLANE_POS = make("plane_pos", HexDir.NORTH_EAST, "dwawdaqqwwqq") { OpPlanePosition }
     val ENTER_PLANE = make("enter_plane", HexDir.NORTH_EAST, "dwawdeewedwwqqqwwqq") { OpEnterPlane }
     val EXIT_PLANE = make("exit_plane", HexDir.NORTH_EAST, "dwawddww") { OpExitPlane }
 

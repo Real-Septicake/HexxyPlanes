@@ -14,6 +14,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static io.github.real_septicake.hexxyplanes.HexxyplanesDimension.PLANE_SIZE;
+
 @Mixin(CastingEnvironment.class)
 public abstract class CastingEnvironmentMixin {
     @Shadow
@@ -25,12 +27,12 @@ public abstract class CastingEnvironmentMixin {
     private void isInOwnPlane(Vec3 vec, CallbackInfoReturnable<Boolean> cir) {
         if(getWorld().dimension() == HexxyplanesDimension.INSTANCE.getWORLD_KEY()) {
             if(getCastingEntity() instanceof ServerPlayer p) {
-                ChunkPos chunkPos = Hexxyplanes.chunkFromUUID(getWorld(), p.getUUID()).getPos();
+                ChunkPos chunkPos = Hexxyplanes.chunkFromUUID(p.getUUID());
                 boolean inside = vec.x >= chunkPos.getMinBlockX() + 1 &&
-                        vec.x <= chunkPos.getMinBlockX() + 11 &&
+                        vec.x <= chunkPos.getMinBlockX() + PLANE_SIZE &&
                         vec.z >= chunkPos.getMinBlockZ() + 1 &&
-                        vec.z <= chunkPos.getMinBlockZ() + 11 &&
-                        vec.y >= 1 && vec.y <= 11;
+                        vec.z <= chunkPos.getMinBlockZ() + PLANE_SIZE &&
+                        vec.y >= 1 && vec.y <= PLANE_SIZE;
                 cir.setReturnValue(inside);
             } else {
                 cir.setReturnValue(false);

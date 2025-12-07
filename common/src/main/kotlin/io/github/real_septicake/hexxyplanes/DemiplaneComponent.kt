@@ -14,7 +14,7 @@ class DemiplaneComponent(val env: CastingEnvironment) : CastingEnvironmentCompon
     override fun onIsVecInRange(vec: Vec3?, current: Boolean): Boolean {
         if (env.world.dimension() === WORLD_KEY) {
             if (env.castingEntity is ServerPlayer) {
-                val chunkPos = chunkFromUUID(env.world, (env.castingEntity as ServerPlayer).uuid).pos
+                val chunkPos = chunkFromUUID((env.castingEntity as ServerPlayer).uuid)
                 val inside =
                     vec!!.x >= chunkPos.minBlockX + 1 && vec.x <= chunkPos.minBlockX + 11 &&
                             vec.z >= chunkPos.minBlockZ + 1 && vec.z <= chunkPos.minBlockZ + 11 &&

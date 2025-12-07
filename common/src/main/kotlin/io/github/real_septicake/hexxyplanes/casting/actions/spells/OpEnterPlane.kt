@@ -22,7 +22,7 @@ object OpEnterPlane : SpellAction {
 
         return SpellAction.Result(
             Spell(dest.player.uuid),
-            MediaConstants.QUENCHED_SHARD_UNIT * 10,
+            if(HexxyplanesDimension.WORLD_KEY == target.level().dimension()) MediaConstants.DUST_UNIT * 5 else MediaConstants.CRYSTAL_UNIT * 10,
             listOf()
         )
     }

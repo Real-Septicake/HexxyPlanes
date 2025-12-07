@@ -1,7 +1,40 @@
 {
-  name: "no",
+  name: "hexxyplanes.book.patterns.spells.demiplane",
   category: "hexcasting:patterns/spells",
   icon: "hexxyplanes:barrier_spawn",
   advancement: "hexcasting:root",
-  pages: []
+  pages: [
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexxyplanes:get_plane",
+      anchor: "hexxyplanes:get_plane",
+      output: "plane",
+      text: "hexxyplanes.book.patterns.spells.demiplane.get_plane"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexxyplanes:plane_pos",
+      anchor: "hexxyplanes:plane_pos",
+      input: "plane",
+      output: "vector",
+      text: "hexxyplanes.book.patterns.spells.demiplane.plane_pos"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexxyplanes:exit_plane",
+      anchor: "hexxyplanes:exit_plane",
+      text: "hexxyplanes.book.patterns.spells.demiplane.exit_plane"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexxyplanes:enter_plane",
+      anchor: "hexxyplanes:enter_plane",
+      input: "plane",
+      text: "hexxyplanes.book.patterns.spells.demiplane.enter_plane.1"
+    },
+    {
+      type: "patchouli:text",
+      text: "hexxyplanes.book.patterns.spells.demiplane.enter_plane.2"
+    }
+  ]
 }

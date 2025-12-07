@@ -5,8 +5,8 @@
       "biome": "minecraft:the_void",
       "layers": [
         {
-          "block": "minecraft:bedrock",
-          "height": 1
+          "block": "hexxyplanes:barrier",
+          "height": 16
         }
       ],
       "structure_overrides": []

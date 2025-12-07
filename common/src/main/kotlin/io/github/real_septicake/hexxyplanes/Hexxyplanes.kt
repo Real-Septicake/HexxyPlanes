@@ -10,8 +10,7 @@ import io.github.real_septicake.hexxyplanes.registry.HexxyplanesActions
 import io.github.real_septicake.hexxyplanes.registry.HexxyplanesBlocks
 import io.github.real_septicake.hexxyplanes.registry.HexxyplanesIotas
 import io.github.real_septicake.hexxyplanes.registry.HexxyplanesItems
-import net.minecraft.world.level.Level
-import net.minecraft.world.level.chunk.LevelChunk
+import net.minecraft.world.level.ChunkPos
 import java.util.UUID
 
 object Hexxyplanes {
@@ -24,8 +23,8 @@ object Hexxyplanes {
     fun id(path: String) = ResourceLocation(MODID, path)
 
     @JvmStatic
-    fun chunkFromUUID(world: Level, uuid: UUID): LevelChunk {
-        return world.getChunk(uuid.mostSignificantBits.toInt() % 257, uuid.leastSignificantBits.toInt() % 257)
+    fun chunkFromUUID(uuid: UUID): ChunkPos {
+        return ChunkPos((uuid.leastSignificantBits % 257).toInt(), (uuid.mostSignificantBits % 257).toInt())
     }
 
     fun init() {

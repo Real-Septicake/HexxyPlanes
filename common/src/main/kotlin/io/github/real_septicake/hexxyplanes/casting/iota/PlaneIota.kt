@@ -16,7 +16,7 @@ class PlaneIota(val player: Player) : Iota(TYPE, player) {
     override fun toleratesOther(that: Iota?): Boolean {
         return typesMatch(this, that)
                 && that is PlaneIota
-                && this.player === that.player
+                && this.player.uuid === that.player.uuid
     }
 
     override fun size() = 2

@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceKey
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.Blocks
 import java.util.*
 
 object HexxyplanesDimension {
@@ -17,15 +18,22 @@ object HexxyplanesDimension {
         Hexxyplanes.id("demiplane")
     )
 
+    const val PLANE_SIZE = 16
+
     fun repairPlane(world: Level, uuid: UUID) {
-        val chunkPos = Hexxyplanes.chunkFromUUID(world, uuid).pos
-        for(x in chunkPos.minBlockX..(chunkPos.minBlockX + 11)) {
-            for(y in 0..11) {
-                for(z in chunkPos.minBlockZ..(chunkPos.minBlockZ + 11)) {
-                    if(x == chunkPos.minBlockX || x == chunkPos.minBlockX + 11 ||
-                        y == 0 || y == 11 ||
-                        z == chunkPos.minBlockZ || z == chunkPos.minBlockZ + 11) {
-                        world.setBlock(BlockPos(x, y, z), HexxyplanesBlocks.BARRIER.block.defaultBlockState(), 3)
+        val chunkPos = Hexxyplanes.chunkFromUUID(uuid)
+        for(x in chunkPos.minBlockX..<(chunkPos.minBlockX + PLANE_SIZE)) {
+            for(y in 0..<PLANE_SIZE) {
+                for(z in chunkPos.minBlockZ..<(chunkPos.minBlockZ + PLANE_SIZE)) {
+                    val block = BlockPos(x, y, z)
+                    if(x == chunkPos.minBlockX || x == chunkPos.minBlockX + PLANE_SIZE - 1 ||
+                        y == 0 || y == PLANE_SIZE - 1 ||
+                        z == chunkPos.minBlockZ || z == chunkPos.minBlockZ + PLANE_SIZE - 1) {
+                        world.setBlock(block, HexxyplanesBlocks.BARRIER.block.defaultBlockState(), 3)
+                    } else {
+                        val bs = world.getBlockState(block)
+                        if(bs.`is`(HexxyplanesBlocks.BARRIER.block) || bs.`is`(HexxyplanesBlocks.BARRIER_SPAWN.block))
+                            world.setBlock(block, Blocks.AIR.defaultBlockState(), 3)
                     }
                 }
             }
@@ -37,7 +45,7 @@ object HexxyplanesDimension {
 
     fun goToPlane(world: ServerLevel, player: ServerPlayer, uuid: UUID) {
         repairPlane(world, uuid)
-        val chunkPos = Hexxyplanes.chunkFromUUID(world, uuid).pos
+        val chunkPos = Hexxyplanes.chunkFromUUID(uuid)
         player.teleportTo(world, (chunkPos.minBlockX + 1.5), 1.0, (chunkPos.minBlockZ + 1.5), -45f, 0f)
     }
 

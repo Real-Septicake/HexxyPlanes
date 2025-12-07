@@ -13,7 +13,7 @@ object GetChunkCommand : HexxyplanesCommand() {
             .then(Commands.argument("for", EntityArgument.player())
                 .executes {
                     val p = EntityArgument.getPlayer(it, "for")
-                    val chunk = Hexxyplanes.chunkFromUUID(p.level(), p.uuid).pos
+                    val chunk = Hexxyplanes.chunkFromUUID(p.uuid)
                     it.source.player?.sendSystemMessage(Component.literal("For ${p.name.string}: ${chunk.minBlockX} 0 ${chunk.minBlockZ}"))
                     1
                 }

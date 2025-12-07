@@ -16,15 +16,16 @@ object HexxyplanesBlocks : HexxyplanesRegistrar<Block>(
     Registries.BLOCK,
     { BuiltInRegistries.BLOCK }
 ) {
+    private val BARRIER_PROPS = BlockProperties.copy(Blocks.DEEPSLATE_TILES).strength(Block.INDESTRUCTIBLE)
+        .pushReaction(PushReaction.BLOCK).explosionResistance(Blocks.BEDROCK.explosionResistance)
+        .isValidSpawn { _, _, _, _ -> false }
 
     val BARRIER = blockItem("barrier", ItemProperties().stacksTo(64).fireResistant()) {
-        BarrierBlock(BlockProperties.copy(Blocks.DEEPSLATE_TILES).strength(Block.INDESTRUCTIBLE)
-            .pushReaction(PushReaction.BLOCK))
+        BarrierBlock(BARRIER_PROPS)
     }
 
     val BARRIER_SPAWN = blockItem("barrier_spawn", ItemProperties().stacksTo(64).fireResistant()) {
-        BarrierBlock(BlockProperties.copy(Blocks.DEEPSLATE_TILES).strength(Block.INDESTRUCTIBLE)
-            .pushReaction(PushReaction.BLOCK))
+        BarrierBlock(BARRIER_PROPS)
     }
 
     private fun <T : Block> blockItem(name: String, props: ItemProperties, builder: () -> T) =
