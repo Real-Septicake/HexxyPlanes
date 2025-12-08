@@ -3,9 +3,11 @@
   "package": "io.github.real_septicake.hexxyplanes.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
+  "refmap": "hexxyplanes-fabric.refmap.json",
   "client": [
   ],
   "mixins": [
+    "LevelMixin"
   ],
   "injectors": {
     "defaultRequire": 1

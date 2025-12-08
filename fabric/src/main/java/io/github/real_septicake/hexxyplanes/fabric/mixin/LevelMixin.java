@@ -1,4 +1,4 @@
-package io.github.real_septicake.hexxyplanes.mixin;
+package io.github.real_septicake.hexxyplanes.fabric.mixin;
 
 import io.github.real_septicake.hexxyplanes.HexxyplanesDimension;
 import net.minecraft.resources.ResourceKey;
