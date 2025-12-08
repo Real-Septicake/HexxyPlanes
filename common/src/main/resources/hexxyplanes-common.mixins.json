@@ -3,6 +3,7 @@
   "package": "io.github.real_septicake.hexxyplanes.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
+  "refmap": "hexxyplanes-common.refmap.json",
   "client": [
   ],
   "mixins": [
