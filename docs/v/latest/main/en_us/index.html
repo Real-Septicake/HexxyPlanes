@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/Real-Septicake/HexxyPlanes/tree/c4ff6ccc00f1d30a9b04661d899bc4b4a6086dfa"
+      href="https://github.com/Real-Septicake/HexxyPlanes/tree/e08c6266f51fea4b8d7a83d47f5fc8b289c68612"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -360,8 +360,64 @@
       <p>Removes me from the demiplane, placing me back at my spawn. This same effect can be accomplished by punching the walls that line the plane. This spell mishaps if not currently in a demiplane</p>
   </div>
 <br />
+  <div id="patterns/spells/demiplane@hexxyplanes:plane_exit" class="">
+<h4 class="pattern-title">Planar Marking (vector →)<a
+    href="#patterns/spells/demiplane@hexxyplanes:plane_exit"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dwawdqaqwwwqa"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dwawdqaqwwwqa</canvas>
+  </details>
+      <p>Marks the target location as my exit for the demiplane, causing me to be sent there upon using <a href="#patterns/spells/demiplane@hexxyplanes:exit_plane"><span style="color: #fc77be">Planar Excursion</span></a> and for non-player entities to be sent there when using <a href="#patterns/spells/demiplane@hexxyplanes:plane_banish"><span style="color: #fc77be">Planar Expulsion</span></a>.</p>
+  </div>
+<br />
   <div id="patterns/spells/demiplane@hexxyplanes:plane_banish" class="">
-<h4 class="pattern-title">Planar Expulsion<a
+<h4 class="pattern-title">Planar Expulsion (entity →)<a
     href="#patterns/spells/demiplane@hexxyplanes:plane_banish"
     class="permalink small"
     title="Permalink"
@@ -413,7 +469,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: dwawdeewe</canvas>
   </details>
-      <p>Forces the target out of the demiplane, costing 5 charged amethyst if the target is a player, and 5 shards otherwise. Mishaps if not currently in a demiplane.</p>
+      <p>Forces the target out of the demiplane, costing 5 shards. Mishaps if not currently in a demiplane.</p>
   </div>
 <br />
     <p>If the target is a player, they are sent to their demiplane exit. If the target is any other entity, they are sent to my demiplane exit. The exit can be set using <a href="#patterns/spells/demiplane@hexxyplanes:plane_exit"><span style="color: #fc77be">Planar Marking</span></a>.</p>
@@ -471,66 +527,10 @@
         data-per-world="True"
       >Your browser does not support visualizing patterns. Pattern code: dwawdeewedwwqqqwwqq</canvas>
   </details>
-      <p>Sends the target to the provided demiplane. Costs 10 charged amethyst if not already in a demiplane, 50 if the target is a player, and costing 5 dust otherwise.</p>
+      <p>Sends the target to the provided demiplane. Costs 2 charged amethyst if the target is not already in a demiplane, and 5 dust otherwise.</p>
   </div>
 <br />
     <p>Upon entering a plane, the two blocks on the spawn point are broken, as if by a player, and any fragile  blocks <strong>are not dropped.</strong> The spawn point is signified by a purple tinted version of the blocks that make up the walls.</p>
-<br />
-  <div id="patterns/spells/demiplane@hexxyplanes:plane_exit" class="">
-<h4 class="pattern-title">Planar Marking (vector →)<a
-    href="#patterns/spells/demiplane@hexxyplanes:plane_exit"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="dwawdqaqwwwqa"
-        data-start="north_east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dwawdqaqwwwqa</canvas>
-  </details>
-      <p>Marks the target location as your exit for the demiplane, casuing you to be sent there upon using <a href="#patterns/spells/demiplane@hexxyplanes:exit_plane"><span style="color: #fc77be">Planar Excursion</span></a> and for non-player entities to be sent there when using <a href="#patterns/spells/demiplane@hexxyplanes:plane_banish"><span style="color: #fc77be">Planar Expulsion</span></a>.</p>
-  </div>
 <br />
 </div>
 </section>
