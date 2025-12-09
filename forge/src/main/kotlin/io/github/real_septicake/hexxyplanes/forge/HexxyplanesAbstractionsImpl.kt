@@ -2,7 +2,7 @@
 
 package io.github.real_septicake.hexxyplanes.forge
 
-import io.github.real_septicake.hexxyplanes.DemiplaneExit
+import io.github.real_septicake.hexxyplanes.HexplaneExit
 import io.github.real_septicake.hexxyplanes.HexxyplanesDimension
 import io.github.real_septicake.hexxyplanes.registry.HexxyplanesRegistrar
 import net.minecraft.server.level.ServerLevel
@@ -21,15 +21,15 @@ fun <T : Any> initRegistry(registrar: HexxyplanesRegistrar<T>) {
     }
 }
 
-fun getExit(player: Player): DemiplaneExit? {
-    return player.getCapability(ForgeHexxyplanes.DEMIPLANE_EXIT_CAPABILITY)
+fun getExit(player: Player): HexplaneExit? {
+    return player.getCapability(ForgeHexxyplanes.HEXPLANE_EXIT_CAPABILITY)
         .resolve().getOrNull()?.exit
 }
 
-fun setExit(player: Player, exit: DemiplaneExit): Boolean {
+fun setExit(player: Player, exit: HexplaneExit): Boolean {
     if(HexxyplanesDimension.WORLD_KEY == exit.dimension)
         return false
-    player.getCapability(ForgeHexxyplanes.DEMIPLANE_EXIT_CAPABILITY)
+    player.getCapability(ForgeHexxyplanes.HEXPLANE_EXIT_CAPABILITY)
         .resolve().ifPresent { it.exit = exit }
     return true
 }

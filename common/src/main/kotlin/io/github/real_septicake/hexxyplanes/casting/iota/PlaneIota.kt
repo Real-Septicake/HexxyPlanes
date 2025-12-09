@@ -41,7 +41,7 @@ class PlaneIota(val player: Player) : Iota(TYPE, player) {
 
             override fun display(tag: Tag): Component {
                 val c = tag.asCompound
-                val comp = Component.translatable("hexxyplanes.tooltip.demiplane")
+                val comp = Component.translatable("hexxyplanes.tooltip.hexplane")
                     .append(" (")
                     .withStyle(ChatFormatting.DARK_GREEN)
                 comp.append(c.getString("name"))

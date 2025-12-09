@@ -2,7 +2,7 @@
 
 package io.github.real_septicake.hexxyplanes.fabric
 
-import io.github.real_septicake.hexxyplanes.DemiplaneExit
+import io.github.real_septicake.hexxyplanes.HexplaneExit
 import io.github.real_septicake.hexxyplanes.HexxyplanesDimension
 import io.github.real_septicake.hexxyplanes.registry.HexxyplanesRegistrar
 import net.minecraft.core.Registry
@@ -13,11 +13,11 @@ fun <T : Any> initRegistry(registrar: HexxyplanesRegistrar<T>) {
     registrar.init { id, value -> Registry.register(registry, id, value) }
 }
 
-fun getExit(player: Player): DemiplaneExit? {
+fun getExit(player: Player): HexplaneExit? {
     return HexxyplanesComponents.EXIT.get(player).exit
 }
 
-fun setExit(player: Player, exit: DemiplaneExit): Boolean {
+fun setExit(player: Player, exit: HexplaneExit): Boolean {
     if(exit.dimension == HexxyplanesDimension.WORLD_KEY)
         return false // disallow setting exit within the plane
     HexxyplanesComponents.EXIT.get(player).exit = exit

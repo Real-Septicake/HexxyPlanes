@@ -1,12 +1,12 @@
 package io.github.real_septicake.hexxyplanes.forge.capabilities;
 
-import io.github.real_septicake.hexxyplanes.DemiplaneExit;
+import io.github.real_septicake.hexxyplanes.HexplaneExit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.util.INBTSerializable;
 import org.jetbrains.annotations.Nullable;
 
-public interface IDemiplaneExit extends INBTSerializable<CompoundTag> {
+public interface IHexplaneExit extends INBTSerializable<CompoundTag> {
     @Nullable
-    DemiplaneExit getExit();
-    void setExit(@Nullable DemiplaneExit exit);
+    HexplaneExit getExit();
+    void setExit(@Nullable HexplaneExit exit);
 }

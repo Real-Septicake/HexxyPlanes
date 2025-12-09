@@ -7,7 +7,7 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadLocation
 import at.petrak.hexcasting.api.misc.MediaConstants
-import io.github.real_septicake.hexxyplanes.DemiplaneExit
+import io.github.real_septicake.hexxyplanes.HexplaneExit
 import io.github.real_septicake.hexxyplanes.setExit
 import io.github.real_septicake.hexxyplanes.toVecI
 import net.minecraft.core.BlockPos
@@ -19,9 +19,15 @@ object OpPlaneExit : ConstMediaAction {
 
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val dest = args.getVec3(0, argc)
+        env.assertVecInRange(dest)
         if(env.castingEntity !is ServerPlayer)
             throw MishapBadCaster()
-        if(!setExit(env.castingEntity as ServerPlayer, DemiplaneExit(env.world.dimension(), BlockPos(dest.toVecI()))))
+        if(!setExit(env.castingEntity as ServerPlayer,
+                HexplaneExit(
+                    env.world.dimension(),
+                    BlockPos(dest.toVecI())
+                )
+            ))
             throw MishapBadLocation(dest, "bad_dimension")
         return listOf()
     }

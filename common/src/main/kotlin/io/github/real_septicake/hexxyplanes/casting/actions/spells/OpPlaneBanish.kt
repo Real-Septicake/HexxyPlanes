@@ -8,7 +8,7 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
 import at.petrak.hexcasting.api.misc.MediaConstants
 import io.github.real_septicake.hexxyplanes.HexxyplanesDimension
-import io.github.real_septicake.hexxyplanes.casting.mishaps.MishapNotInDemiplane
+import io.github.real_septicake.hexxyplanes.casting.mishaps.MishapNotInHexplane
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity
 
@@ -19,7 +19,7 @@ object OpPlaneBanish : SpellAction {
         if(env.castingEntity !is ServerPlayer)
             throw MishapBadCaster()
         if(HexxyplanesDimension.WORLD_KEY != env.world.dimension())
-            throw MishapNotInDemiplane()
+            throw MishapNotInHexplane()
         val entity = args.getEntity(0, argc)
         env.assertEntityInRange(entity)
 

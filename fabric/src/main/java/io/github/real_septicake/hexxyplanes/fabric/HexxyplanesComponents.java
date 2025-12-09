@@ -8,12 +8,12 @@ import dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy;
 import io.github.real_septicake.hexxyplanes.Hexxyplanes;
 
 public final class HexxyplanesComponents implements EntityComponentInitializer {
-    public static final ComponentKey<DemiplaneExitComponent> EXIT = ComponentRegistry.getOrCreate(
-            Hexxyplanes.id("exit"), DemiplaneExitComponent.class
+    public static final ComponentKey<HexplaneExitComponent> EXIT = ComponentRegistry.getOrCreate(
+            Hexxyplanes.id("exit"), HexplaneExitComponent.class
     );
 
     @Override
     public void registerEntityComponentFactories(EntityComponentFactoryRegistry registry) {
-        registry.registerForPlayers(EXIT, it -> new DemiplaneExitComponent(), RespawnCopyStrategy.ALWAYS_COPY);
+        registry.registerForPlayers(EXIT, it -> new HexplaneExitComponent(), RespawnCopyStrategy.ALWAYS_COPY);
     }
 }

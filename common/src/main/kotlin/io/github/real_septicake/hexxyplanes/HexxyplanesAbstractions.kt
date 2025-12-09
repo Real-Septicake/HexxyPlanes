@@ -18,11 +18,11 @@ fun <T : Any> initRegistry(registrar: HexxyplanesRegistrar<T>) {
 }
 
 @ExpectPlatform
-fun getExit(player: Player) : DemiplaneExit? {
+fun getExit(player: Player) : HexplaneExit? {
     throw AssertionError()
 }
 
 @ExpectPlatform
-fun setExit(player: Player, exit: DemiplaneExit) : Boolean {
+fun setExit(player: Player, exit: HexplaneExit) : Boolean {
     throw AssertionError()
 }

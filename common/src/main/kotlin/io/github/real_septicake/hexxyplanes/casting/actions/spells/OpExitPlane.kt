@@ -5,7 +5,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
 import io.github.real_septicake.hexxyplanes.HexxyplanesDimension
-import io.github.real_septicake.hexxyplanes.casting.mishaps.MishapNotInDemiplane
+import io.github.real_septicake.hexxyplanes.casting.mishaps.MishapNotInHexplane
 import net.minecraft.server.level.ServerPlayer
 
 object  OpExitPlane : ConstMediaAction {
@@ -16,7 +16,7 @@ object  OpExitPlane : ConstMediaAction {
         if(target !is ServerPlayer)
             throw MishapBadCaster()
         if(HexxyplanesDimension.WORLD_KEY != target.level().dimension())
-            throw MishapNotInDemiplane()
+            throw MishapNotInHexplane()
         HexxyplanesDimension.exitPlane(env.world, target)
         return listOf()
     }

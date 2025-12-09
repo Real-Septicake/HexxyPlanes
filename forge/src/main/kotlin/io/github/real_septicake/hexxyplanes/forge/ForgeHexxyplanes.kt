@@ -4,10 +4,10 @@ import dev.architectury.platform.forge.EventBuses
 import io.github.real_septicake.hexxyplanes.Hexxyplanes
 import io.github.real_septicake.hexxyplanes.HexxyplanesCommands
 import io.github.real_septicake.hexxyplanes.HexxyplanesDimension
-import io.github.real_septicake.hexxyplanes.forge.capabilities.DemiplaneExitAttacher
-import io.github.real_septicake.hexxyplanes.forge.capabilities.DemiplaneExitCapability
+import io.github.real_septicake.hexxyplanes.forge.capabilities.HexplaneExitAttacher
+import io.github.real_septicake.hexxyplanes.forge.capabilities.HexplaneExitCapability
 import net.minecraftforge.event.entity.player.PlayerEvent
-import io.github.real_septicake.hexxyplanes.forge.capabilities.IDemiplaneExit
+import io.github.real_septicake.hexxyplanes.forge.capabilities.IHexplaneExit
 import io.github.real_septicake.hexxyplanes.forge.datagen.ForgeHexxyplanesDatagen
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity
@@ -26,7 +26,7 @@ import thedarkcolour.kotlinforforge.forge.MOD_BUS
 @Mod(Hexxyplanes.MODID)
 class ForgeHexxyplanes {
     companion object {
-        val DEMIPLANE_EXIT_CAPABILITY: Capability<IDemiplaneExit> = CapabilityManager.get(object : CapabilityToken<IDemiplaneExit>() {})
+        val HEXPLANE_EXIT_CAPABILITY: Capability<IHexplaneExit> = CapabilityManager.get(object : CapabilityToken<IHexplaneExit>() {})
     }
 
     init {
@@ -36,7 +36,7 @@ class ForgeHexxyplanes {
             addListener(ForgeHexxyplanesDatagen::init)
             addListener(ForgeHexxyplanesServer::init)
             addListener { evt: RegisterCapabilitiesEvent ->
-                evt.register(IDemiplaneExit::class.java)
+                evt.register(IHexplaneExit::class.java)
             }
         }
         MinecraftForge.EVENT_BUS.apply {
@@ -49,17 +49,17 @@ class ForgeHexxyplanes {
             addGenericListener(Entity::class.java) { evt: AttachCapabilitiesEvent<Entity> ->
                 if(evt.`object` is Player)
                     evt.addCapability(
-                        DemiplaneExitAttacher.IDENTIFIER,
-                        DemiplaneExitAttacher.DemiplaneExitProvider()
+                        HexplaneExitAttacher.IDENTIFIER,
+                        HexplaneExitAttacher.HexplaneExitProvider()
                     )
             }
             addListener { evt: PlayerEvent.Clone ->
                 if(evt.isWasDeath) {
                     evt.original.reviveCaps()
-                    evt.entity.getCapability(DEMIPLANE_EXIT_CAPABILITY)
-                        .resolve().orElse(DemiplaneExitCapability())
-                        .exit = evt.original.getCapability(DEMIPLANE_EXIT_CAPABILITY)
-                        .resolve().orElse(DemiplaneExitCapability()).exit
+                    evt.entity.getCapability(HEXPLANE_EXIT_CAPABILITY)
+                        .resolve().orElse(HexplaneExitCapability())
+                        .exit = evt.original.getCapability(HEXPLANE_EXIT_CAPABILITY)
+                        .resolve().orElse(HexplaneExitCapability()).exit
                 }
             }
         }

@@ -1,24 +1,24 @@
 {
-  name: "hexxyplanes.book.patterns.spells.demiplane",
+  name: "hexxyplanes.book.patterns.spells.hexplane",
   category: "hexcasting:patterns/spells",
   icon: "hexxyplanes:barrier_spawn",
   advancement: "hexcasting:enlightenment",
   pages: [
     {
       type: "patchouli:text",
-      title: "hexxyplanes.book.info.demiplane",
-      text: "hexxyplanes.book.info.demiplane.text.1"
+      title: "hexxyplanes.book.info.hexplane",
+      text: "hexxyplanes.book.info.hexplane.text.1"
     },
     {
       type: "patchouli:text",
-      text: "hexxyplanes.book.info.demiplane.text.2"
+      text: "hexxyplanes.book.info.hexplane.text.2"
     },
     {
       type: "hexcasting:pattern",
       op_id: "hexxyplanes:get_plane",
       anchor: "hexxyplanes:get_plane",
       output: "plane",
-      text: "hexxyplanes.book.patterns.spells.demiplane.get_plane"
+      text: "hexxyplanes.book.patterns.spells.hexplane.get_plane"
     },
     {
       type: "hexcasting:pattern",
@@ -26,46 +26,46 @@
       anchor: "hexxyplanes:plane_pos",
       input: "plane",
       output: "vector",
-      text: "hexxyplanes.book.patterns.spells.demiplane.plane_pos"
+      text: "hexxyplanes.book.patterns.spells.hexplane.plane_pos"
     },
     {
       type: "hexcasting:pattern",
       op_id: "hexxyplanes:plane_exit",
       anchor: "hexxyplanes:plane_exit",
       input: "vector",
-      text: "hexxyplanes.book.patterns.spells.demiplane.plane_exit.1"
+      text: "hexxyplanes.book.patterns.spells.hexplane.plane_exit.1"
     },
     {
       type: "patchouli:text",
-      text: "hexxyplanes.book.patterns.spells.demiplane.plane_exit.2"
+      text: "hexxyplanes.book.patterns.spells.hexplane.plane_exit.2"
     },
     {
       type: "hexcasting:pattern",
       op_id: "hexxyplanes:plane_banish",
       anchor: "hexxyplanes:plane_banish",
       input: "entity",
-      text: "hexxyplanes.book.patterns.spells.demiplane.plane_banish.1"
+      text: "hexxyplanes.book.patterns.spells.hexplane.plane_banish.1"
     },
     {
       type: "patchouli:text",
-      text: "hexxyplanes.book.patterns.spells.demiplane.plane_banish.2"
+      text: "hexxyplanes.book.patterns.spells.hexplane.plane_banish.2"
     },
     {
       type: "hexcasting:pattern",
       op_id: "hexxyplanes:enter_plane",
       anchor: "hexxyplanes:enter_plane",
       input: "plane, entity",
-      text: "hexxyplanes.book.patterns.spells.demiplane.enter_plane.1"
+      text: "hexxyplanes.book.patterns.spells.hexplane.enter_plane.1"
     },
     {
       type: "patchouli:text",
-      text: "hexxyplanes.book.patterns.spells.demiplane.enter_plane.2"
+      text: "hexxyplanes.book.patterns.spells.hexplane.enter_plane.2"
     },
     {
       type: "hexcasting:pattern",
       op_id: "hexxyplanes:exit_plane",
       anchor: "hexxyplanes:exit_plane",
-      text: "hexxyplanes.book.patterns.spells.demiplane.exit_plane"
+      text: "hexxyplanes.book.patterns.spells.hexplane.exit_plane"
     }
   ]
 }

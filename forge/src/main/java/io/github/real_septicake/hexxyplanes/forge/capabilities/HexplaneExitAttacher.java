@@ -12,15 +12,15 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class DemiplaneExitAttacher {
+public class HexplaneExitAttacher {
     public static final ResourceLocation IDENTIFIER = Hexxyplanes.id("exit");
-    public static class DemiplaneExitProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
-        private final IDemiplaneExit backing = new DemiplaneExitCapability();
-        private final LazyOptional<IDemiplaneExit> optional = LazyOptional.of(() -> backing);
+    public static class HexplaneExitProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
+        private final IHexplaneExit backing = new HexplaneExitCapability();
+        private final LazyOptional<IHexplaneExit> optional = LazyOptional.of(() -> backing);
 
         @Override
         public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> capability, @Nullable Direction arg) {
-            return ForgeHexxyplanes.Companion.getDEMIPLANE_EXIT_CAPABILITY().orEmpty(capability, this.optional);
+            return ForgeHexxyplanes.Companion.getHEXPLANE_EXIT_CAPABILITY().orEmpty(capability, this.optional);
         }
 
         @Override

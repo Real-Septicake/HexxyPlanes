@@ -17,7 +17,7 @@ object HexxyplanesDimension {
 
     val WORLD_KEY = ResourceKey.create(
         Registries.DIMENSION,
-        Hexxyplanes.id("demiplane")
+        Hexxyplanes.id("hexplane")
     )
 
     const val PLANE_SIZE = 16
@@ -55,7 +55,7 @@ object HexxyplanesDimension {
         if(entity is ServerPlayer)
             exitPlane(world, entity)
         else {
-            val exit = getExit(by) ?: DemiplaneExit(
+            val exit = getExit(by) ?: HexplaneExit(
                 by.respawnDimension, by.respawnPosition ?: world.sharedSpawnPos
             )
             entity.teleportTo(

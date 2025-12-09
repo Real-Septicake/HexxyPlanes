@@ -7,7 +7,7 @@ import io.github.real_septicake.hexxyplanes.HexxyplanesDimension.WORLD_KEY
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.phys.Vec3
 
-class DemiplaneComponent(val env: CastingEnvironment) : CastingEnvironmentComponent.IsVecInRange {
+class HexplaneComponent(val env: CastingEnvironment) : CastingEnvironmentComponent.IsVecInRange {
     override fun getKey() = KEY()
     class KEY : CastingEnvironmentComponent.Key<CastingEnvironmentComponent.IsVecInRange>
 

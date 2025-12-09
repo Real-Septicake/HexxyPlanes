@@ -1,7 +1,7 @@
 package io.github.real_septicake.hexxyplanes.commands
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder
-import io.github.real_septicake.hexxyplanes.DemiplaneExit
+import io.github.real_septicake.hexxyplanes.HexplaneExit
 import io.github.real_septicake.hexxyplanes.setExit
 import net.minecraft.ChatFormatting
 import net.minecraft.commands.CommandSourceStack
@@ -18,7 +18,12 @@ object PlaneExitCommand : HexxyplanesCommand() {
                     .executes {
                         val dim = DimensionArgument.getDimension(it, "in")
                         val at = BlockPosArgument.getBlockPos(it, "at")
-                        return@executes if(setExit(it.source.playerOrException, DemiplaneExit(dim.dimension(), at))) {
+                        return@executes if(setExit(it.source.playerOrException,
+                                HexplaneExit(
+                                    dim.dimension(),
+                                    at
+                                )
+                            )) {
                             it.source.sendSystemMessage(Component.literal("Successfully set exit"))
                             1
                         } else {

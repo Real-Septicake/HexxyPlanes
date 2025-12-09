@@ -5,7 +5,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import io.github.real_septicake.hexxyplanes.casting.iota.PlaneIota
-import net.minecraft.world.entity.player.Player
+import net.minecraft.server.level.ServerPlayer
 
 object OpGetPlane : ConstMediaAction {
     override val argc = 0
@@ -13,9 +13,8 @@ object OpGetPlane : ConstMediaAction {
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val player = env.castingEntity ?: return listOf(NullIota())
         println(player.javaClass.canonicalName)
-        if(player !is Player)
+        if(player !is ServerPlayer)
             return listOf(NullIota())
-        println("made it")
         return listOf(PlaneIota(player))
     }
 }

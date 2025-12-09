@@ -29,7 +29,7 @@ object Hexxyplanes {
 
     fun init() {
         CastingEnvironment.addCreateEventListener { t, _ ->
-            t.addExtension(DemiplaneComponent(t))
+            t.addExtension(HexplaneComponent(t))
         }
         HexxyplanesServerConfig.init()
         initRegistries(
