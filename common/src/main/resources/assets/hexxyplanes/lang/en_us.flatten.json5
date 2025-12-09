@@ -15,12 +15,10 @@
               dropped./$ The spawn point is signified by a purple tinted version \
               of the blocks that make up the walls."
             },
-            exit_plane: "Removes me from the hexplane, placing me back at my exit, \
-            or my spawn if I have no exit set. This spell mishaps if not currently \
-            in a hexplane.",
             plane_pos: "Gets the spawn position within this plane as a vector.",
             plane_banish: {
-              "1": "Forces the target out of the hexplane, costing 5 shards. \
+              "1": "Forces the target out of the hexplane, costing 5 shards \
+              if used on something other than myself, and being free otherwise. \
               Mishaps if not currently in a hexplane.",
               "2": "If the target is a player, they are sent to their hexplane exit. \
               If the target is any other entity, they are sent to my hexplane exit. \
@@ -30,7 +28,7 @@
             plane_exit: {
               "1": "Marks the target location as my exit for the hexplane, \
               causing me to be sent there upon using $(l:patterns/spells/hexplane\
-              #hexxyplanes:exit_plane)$(action)Planar Excursion/$.",
+              #hexxyplanes:plane_banish)$(action)Planar Expulsion/$ on myself.",
               "2": "Non-player entities will be sent here when using \
               $(l:patterns/spells/hexplane#hexxyplanes:plane_banish)$(action)Planar \
               Expulsion/$. Mishaps if the exit is within a hexplane."
@@ -73,7 +71,6 @@
       "hexxyplanes:": {
         get_plane: "Planar Reflection",
         enter_plane: "Planar Intrusion",
-        exit_plane: "Planar Excursion",
         plane_pos: "Planar Purification",
         plane_banish: "Planar Expulsion",
         plane_exit: "Planar Marking"

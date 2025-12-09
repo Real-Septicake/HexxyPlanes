@@ -25,7 +25,7 @@ object OpPlaneBanish : SpellAction {
 
         return SpellAction.Result(
             Spell(entity, env.castingEntity as ServerPlayer),
-            MediaConstants.SHARD_UNIT * 5,
+            if(entity.`is`(env.castingEntity!!)) 0 else MediaConstants.SHARD_UNIT * 5,
             listOf()
         )
     }

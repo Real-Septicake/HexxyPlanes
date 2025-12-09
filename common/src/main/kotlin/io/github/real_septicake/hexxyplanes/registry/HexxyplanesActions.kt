@@ -18,9 +18,8 @@ object HexxyplanesActions : HexxyplanesRegistrar<ActionRegistryEntry>(
     val GET_PLANE = make("get_plane", HexDir.NORTH_EAST, "dwawd") { OpGetPlane }
     val PLANE_POS = make("plane_pos", HexDir.NORTH_EAST, "dwawdaqqwwqq") { OpPlanePosition }
     val ENTER_PLANE = make("enter_plane", HexDir.NORTH_EAST, "dwawdeewedwwqqqwwqq") { OpEnterPlane }
-    val EXIT_PLANE = make("exit_plane", HexDir.NORTH_EAST, "dwawddww") { OpExitPlane }
     val PLANE_EXIT = make("plane_exit", HexDir.NORTH_EAST, "dwawdqaqwwwqa") { OpPlaneExit }
-    val PLANE_BANISH = make("plane_banish", HexDir.NORTH_EAST, "dwawdeewe") { OpPlaneBanish }
+    val PLANE_BANISH = make("plane_banish", HexDir.NORTH_EAST, "dwawddww") { OpPlaneBanish }
 
     private fun make(name: String, startDir: HexDir, signature: String, getAction: () -> Action) = register(name) {
         ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), getAction())
