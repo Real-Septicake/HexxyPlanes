@@ -71,7 +71,6 @@ dependencies {
     modLocalRuntime(libs.serializationHooks)
     modLocalRuntime(libs.trinkets)
     modLocalRuntime(libs.inline.fabric) { isTransitive = false }
-    modLocalRuntime(files("../libs/fabric-carpet-1.20-1.4.112+v230608.jar"))
 
     libs.mixinExtras.fabric.also {
         localRuntime(it)
