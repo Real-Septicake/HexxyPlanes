@@ -59,7 +59,7 @@ publishing {
         maven {
             url = uri("https://pkgs.dev.azure.com/hexxy-media/artifacts/_packaging/community/maven/v1")
             credentials {
-                username = "hexxy-media"
+                username = "Real-Septicake"
                 password = System.getenv("MAVEN_PASSWORD")
             }
         }
