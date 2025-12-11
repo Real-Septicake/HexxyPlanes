@@ -11,8 +11,6 @@ import net.minecraftforge.registries.RegisterEvent
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 import kotlin.jvm.optionals.getOrNull
 
-val planeCache = mutableMapOf<String, ServerLevel>()
-
 fun <T : Any> initRegistry(registrar: HexxyplanesRegistrar<T>) {
     MOD_BUS.addListener { event: RegisterEvent ->
         event.register(registrar.registryKey) { helper ->
@@ -26,8 +24,8 @@ fun getExit(player: Player): HexplaneExit? {
         .resolve().getOrNull()?.exit
 }
 
-fun setExit(player: Player, exit: HexplaneExit): Boolean {
-    if(HexxyplanesDimension.WORLD_KEY == exit.dimension)
+fun setExit(player: Player, exit: HexplaneExit?): Boolean {
+    if(HexxyplanesDimension.WORLD_KEY == exit?.dimension)
         return false
     player.getCapability(ForgeHexxyplanes.HEXPLANE_EXIT_CAPABILITY)
         .resolve().ifPresent { it.exit = exit }

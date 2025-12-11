@@ -23,6 +23,6 @@ fun getExit(player: Player) : HexplaneExit? {
 }
 
 @ExpectPlatform
-fun setExit(player: Player, exit: HexplaneExit) : Boolean {
+fun setExit(player: Player, exit: HexplaneExit?) : Boolean {
     throw AssertionError()
 }
