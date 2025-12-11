@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/Real-Septicake/HexxyPlanes/tree/7ae0f4586454ea2f5ee20e60417f5bec006337d2"
+      href="https://github.com/Real-Septicake/HexxyPlanes/tree/198ee886d162cc01a81efa2bf39a6bcf072f09a7"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -311,7 +311,7 @@
   </div>
 <br />
   <div id="patterns/spells/hexplane@hexxyplanes:plane_exit" class="">
-<h4 class="pattern-title">Planar Marking (vector →)<a
+<h4 class="pattern-title">Planar Marking (vector | null →)<a
     href="#patterns/spells/hexplane@hexxyplanes:plane_exit"
     class="permalink small"
     title="Permalink"
@@ -358,12 +358,12 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="dwawdqaqwwwqa"
+        data-string="dwawdqaqwwwqaeqwq"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dwawdqaqwwwqa</canvas>
+      >Your browser does not support visualizing patterns. Pattern code: dwawdqaqwwwqaeqwq</canvas>
   </details>
-      <p>Marks the target location as my exit for the hexplane, causing me to be sent there upon using <a href="#patterns/spells/hexplane@hexxyplanes:plane_banish"><span style="color: #fc77be">Planar Expulsion</span></a> on myself.</p>
+      <p>Marks the target location as my exit for the hexplane, or resets it to be my spawn location if passed null, causing me to be sent there upon using <a href="#patterns/spells/hexplane@hexxyplanes:plane_banish"><span style="color: #fc77be">Planar Expulsion</span></a> on myself.</p>
   </div>
 <br />
     <p>Non-player entities will be sent here when using <a href="#patterns/spells/hexplane@hexxyplanes:plane_banish"><span style="color: #fc77be">Planar Expulsion</span></a>. Mishaps if the exit is within a hexplane.</p>
@@ -483,6 +483,62 @@
   </div>
 <br />
     <p>Upon entering a plane, the two blocks on the spawn point are broken, as if by a player, and any fragile blocks <strong>are not dropped.</strong> The spawn point is signified by a purple tinted version of the blocks that make up the walls.</p>
+<br />
+  <div id="patterns/spells/hexplane@hexxyplanes:exit_reveal" class="">
+<h4 class="pattern-title">Reveal Mark<a
+    href="#patterns/spells/hexplane@hexxyplanes:exit_reveal"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dwawdqaqwwwqa"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dwawdqaqwwwqa</canvas>
+  </details>
+      <p>Displays my hexplane exit to me.</p>
+  </div>
 <br />
     </div>
 </div>
