@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - Commands did not abide by permissions
+- Planar Intrusion now respects Hex Casting's `cannot_teleport` tag
 
 ### Added
 
