@@ -1,9 +1,19 @@
 {
   hexxyplanes: {
     book: {
+      interop: {
+        oneironaut: {
+          "": "Oneironaut",
+          patterns: {
+            spells: {
+              exit_deconstruct: "Puts the dimension and the coordinates of my hexplane exit onto the stack."
+            }
+          }
+        }
+      },
       patterns: {
         spells: {
-          "hexplane": {
+          hexplane: {
             "": "Hexplanes",
             get_plane: "Retrieves an iota representing my hexplane.",
             exit_reveal: "Displays my hexplane exit to me.",
@@ -76,7 +86,8 @@
         plane_pos: "Planar Purification",
         plane_banish: "Planar Expulsion",
         plane_exit: "Planar Marking",
-        exit_reveal: "Reveal Mark"
+        exit_reveal: "Reveal Mark",
+        exit_deconstruct: "Marker's Gambit"
       },
 
       // use this to add shortened versions of pattern names if the full name won't fit in the ingame book

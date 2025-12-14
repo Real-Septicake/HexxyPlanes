@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - A pattern for showing your hexplane exit (Reveal Mark)
 - The ability to reset your hexplane exit by passing null to Planar Marking
+- Interop for Oneironaut allowing for the retrieval of information regarding your hexplane exit
+  - Oneironaut needed for providing Dimensional Imprint iota
 
 ## 0.1.1
 

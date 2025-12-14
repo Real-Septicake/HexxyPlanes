@@ -1,0 +1,16 @@
+{
+  name: "hexxyplanes.book.interop.oneironaut",
+  category: "hexcasting:interop",
+  icon: "minecraft:purple_concrete_powder",
+  advancement: "hexcasting:root",
+  flag: "mod:oneironaut",
+  pages: [
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexxyplanes:exit_deconstruct",
+      anchor: "hexxyplanes:exit_deconstruct",
+      output: "imprint, vec",
+      text: "hexxyplanes.book.interop.oneironaut.patterns.spells.exit_deconstruct"
+    }
+  ]
+}

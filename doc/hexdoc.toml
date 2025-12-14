@@ -36,6 +36,10 @@ _pattern_regex = { "!Raw"='make\("(?P<name>[^"]+)",\s*HexDir\.(?P<startdir>\w+),
 path = "{$_common.kotlin}/registry/HexxyplanesActions.kt"
 regex = "{^_pattern_regex}"
 
+[[extra.hexcasting.pattern_stubs]]
+path = "{$_fabric.kotlin}/interop/oneironaut/OneironautCompat.kt"
+regex = "{^_pattern_regex}"
+
 # platforms
 
 [_common]
