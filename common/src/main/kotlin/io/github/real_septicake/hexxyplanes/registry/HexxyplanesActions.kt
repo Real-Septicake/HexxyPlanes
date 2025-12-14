@@ -22,7 +22,7 @@ object HexxyplanesActions : HexxyplanesRegistrar<ActionRegistryEntry>(
     val PLANE_EXIT_REVEAL = make("exit_reveal", HexDir.NORTH_EAST, "dwawdqaqwwwqa") { OpExitReveal }
     val PLANE_BANISH = make("plane_banish", HexDir.NORTH_EAST, "dwawddww") { OpPlaneBanish }
 
-    private fun make(name: String, startDir: HexDir, signature: String, getAction: () -> Action) = register(name) {
+    fun make(name: String, startDir: HexDir, signature: String, getAction: () -> Action) = register(name) {
         ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), getAction())
     }
 }

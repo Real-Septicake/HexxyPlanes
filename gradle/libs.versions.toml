@@ -27,7 +27,7 @@ forge-dependency = "47" # for mods.toml
 # mods
 
 # 0.11.2-pre-701 corresponds to the build of 0.11.2 on CurseForge/Modrinth
-hexcasting = "0.11.2-pre-701"
+hexcasting = "0.11.2"
 # FIXME: this should be 0.11.2, but that breaks the dev environment
 hexcasting-dependency = "0.11.1"
 paucal = "0.6.0-pre-118"
@@ -53,8 +53,8 @@ caelus = "3.1.0+1.20"
 asm = "9.5"
 shadow = "7.1.2"
 modPublish = "1.0.0"
-infiniverse = "2.0.0.1"
-fantasy = "0.4.11+1.20-rc1"
+
+hexal = "0.3.1"
 
 [bundles]
 asm = ["asm", "asm-analysis", "asm-commons", "asm-tree", "asm-util"]
@@ -65,10 +65,6 @@ kotlin-fabric = { module="net.fabricmc:fabric-language-kotlin", version.ref="kot
 kotlin-forge  = { module="thedarkcolour:kotlinforforge", version.ref="kotlin-forge" }
 
 minecraft = { module="com.mojang:minecraft", version.ref="minecraft" }
-
-# dim handling
-infiniverse = { module="net.commoble.infiniverse:infiniverse-1.20.4", version.ref="infiniverse" }
-fantasy = { module="xyz.nucleoid:fantasy", version.ref="fantasy" }
 
 parchment = { module="org.parchmentmc.data:parchment-1.20.1", version.ref="parchment" }
 
@@ -84,6 +80,8 @@ forge = { module="net.minecraftforge:forge", version.ref="forge" }
 hexcasting-common = { module="at.petra-k.hexcasting:hexcasting-common-1.20.1", version.ref="hexcasting" }
 hexcasting-fabric = { module="at.petra-k.hexcasting:hexcasting-fabric-1.20.1", version.ref="hexcasting" }
 hexcasting-forge  = { module="at.petra-k.hexcasting:hexcasting-forge-1.20.1", version.ref="hexcasting" }
+
+hexal-fabric = { module="ram.talia.hexal:hexal-fabric-1.20.1", version.ref="hexal" }
 
 paucal-common = { module="at.petra-k.paucal:paucal-common-1.20.1", version.ref="paucal" }
 paucal-fabric = { module="at.petra-k.paucal:paucal-fabric-1.20.1", version.ref="paucal" }

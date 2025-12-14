@@ -24,6 +24,20 @@ loom {
     }
 }
 
+repositories {
+    maven {
+        url = uri("https://pkgs.dev.azure.com/hexxy-media/artifacts/_packaging/community/maven/v1")
+        name = "HexxyMaven"
+    }
+    maven {
+        url = uri("https://repo.sleeping.town")
+        name = "Unascribed"
+    }
+    maven {
+        url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
+    }
+}
+
 hexxyplanesModDependencies {
     // expand versions in fabric.mod.json
     filesMatching.add("fabric.mod.json")
@@ -77,6 +91,11 @@ dependencies {
         include(it)
         annotationProcessor(it)
     }
+
+    modCompileOnly(files("../libs/oneironaut-fabric-1.20.1-0.5.0-ad811dc.jar"))
+
+    modLocalRuntime(files("../libs/oneironaut-fabric-1.20.1-0.5.0-ad811dc.jar"))
+    modLocalRuntime(libs.hexal.fabric)
 
     modApi(libs.clothConfig.fabric) {
         exclude(group = "net.fabricmc.fabric-api")

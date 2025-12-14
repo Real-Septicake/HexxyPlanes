@@ -70,22 +70,25 @@ object HexxyplanesDimension {
         val exit = getExit(player)
         if(exit !== null) {
             val dim = world.server.getLevel(exit.dimension)!!
-            val pos = exit.position
+            val pos = exit.position.center
             player.teleportTo(
-                dim, pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble(), 0f, 0f
+                dim, pos.x, pos.y - 0.5, pos.z, 0f, 0f
             )
             return
         }
-        var dest = player.respawnPosition ?: world.sharedSpawnPos
+        var dest = (player.respawnPosition ?: world.server.overworld().sharedSpawnPos).center
         var dim = player.respawnDimension
-        if(dim == WORLD_KEY) {
+        if(world.server.getLevel(dim) === null) {
+            dest = world.server.overworld().sharedSpawnPos.center
             dim = Level.OVERWORLD
-            dest = world.sharedSpawnPos
+        }
+        if(dim == WORLD_KEY) {
             player.sendSystemMessage(
                 Component.translatable("hexxyplanes.error.bad_respawn")
                 .withStyle(ChatFormatting.BOLD))
-        }
-        player.teleportTo(world.server.getLevel(dim)!!,
-            dest.x.toDouble(), dest.y.toDouble(), dest.z.toDouble(), 0f, 0f)
+            dest = world.server.overworld().sharedSpawnPos.center
+            player.teleportTo(world.server.overworld(), dest.x, dest.y - 0.5, dest.z, player.respawnAngle, 0f)
+        } else
+            player.teleportTo(world.server.getLevel(dim)!!, dest.x, dest.y - 0.5, dest.z, player.respawnAngle, 0f)
     }
 }
