@@ -34,7 +34,6 @@ class PlaneIota(val player: Player) : Iota(TYPE, player) {
             override fun deserialize(tag: Tag, world: ServerLevel): PlaneIota? {
                 val c = tag.asCompound
                 val uuid = c.getUUID("uuid")
-                println(uuid)
                 val player = world.getPlayerByUUID(uuid) ?: return null
                 return PlaneIota(player)
             }

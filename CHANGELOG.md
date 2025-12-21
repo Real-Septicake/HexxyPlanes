@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 0.2.1
+
+### Changed
+
+- zh_cn translation updated by [ChuijkYahus](https://github.com/ChuijkYahus) via [#4](https://github.com/Real-Septicake/HexxyPlanes/pull/4)
+
 ## 0.2.0
 
 ### Fixed
